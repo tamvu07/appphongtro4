@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import Kingfisher
 
 class Screen_Chat_Room_With_Rent_01_01_ViewController: UIViewController,UITextFieldDelegate {
 
@@ -110,7 +111,9 @@ extension Screen_Chat_Room_With_Rent_01_01_ViewController: UITableViewDelegate, 
             let image_user2    = Cell.viewWithTag(1003)  as! UIImageView
             let text_user2     = Cell.viewWithTag(1004)  as! UILabel
             
-            image_user2.loadavatar(link: currenUser.linkAvatar)
+//            image_user2.loadavatar(link: currenUser.linkAvatar)
+            let url_user2_image: URL = URL.init(string: currenUser.linkAvatar)!
+            image_user2.kf.setImage(with: url_user2_image)
             text_user2.text = array_text_chat[indexPath.row]
             return Cell
         }else{
@@ -120,7 +123,9 @@ extension Screen_Chat_Room_With_Rent_01_01_ViewController: UITableViewDelegate, 
             let text_user1     = Cell.viewWithTag(1002)  as! UILabel
             let image_user1    = Cell.viewWithTag(1001)  as! UIImageView
             
-            image_user1.loadavatar(link: currenUser.linkAvatar)
+//            image_user1.loadavatar(link: currenUser.linkAvatar)
+            let url_user1_image: URL = URL.init(string: currenUser.linkAvatar)!
+            image_user1.kf.setImage(with: url_user1_image)
             text_user1.text = array_text_chat[indexPath.row]
             return Cell
         }

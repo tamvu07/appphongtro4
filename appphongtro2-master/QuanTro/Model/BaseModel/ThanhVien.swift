@@ -12,7 +12,7 @@
  */
 
 import Foundation
-struct ThanhVien : Codable {
+class ThanhVien : Codable {
     var idThanhVien: String?
     var ten : String?
     var ngaysinh : String?

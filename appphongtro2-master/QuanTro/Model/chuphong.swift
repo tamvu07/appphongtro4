@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct ChuPhong {
+class ChuPhong {
     let id:String!
     let ten:String!
     let linkAvatar:String!

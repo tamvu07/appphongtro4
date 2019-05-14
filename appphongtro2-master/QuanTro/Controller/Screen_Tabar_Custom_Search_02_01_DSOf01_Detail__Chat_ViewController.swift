@@ -120,13 +120,17 @@ extension Screen_Tabar_Custom_Search_02_01_DSOf01_Detail__Chat_ViewController: U
         {
             let Cell = tableView.dequeueReusableCell(withIdentifier: "CELL12", for: indexPath) as! CELL2_Tabar_Custom_Search_02_01_DSOf01_Detail__Chat_TableViewCell
             
-            Cell.avatar_2_user.loadavatar(link: currenUser.linkAvatar)
+//            Cell.avatar_2_user.loadavatar(link: currenUser.linkAvatar)
+            let avatar_user2: URL = URL.init(string: currenUser.linkAvatar)!
+            Cell.avatar_2_user.kf.setImage(with: avatar_user2)
             Cell.lb_2.text = array_text_chat[indexPath.row]
             return Cell
         }else{
             let Cell = tableView.dequeueReusableCell(withIdentifier: "CELL11", for: indexPath) as! CELL1_Tabar_Custom_Search_02_01_DSOf01_Detail__Chat_TableViewCell
             
-            Cell.avatar_1_User.loadavatar(link: vistor.linkAvatar)
+//            Cell.avatar_1_User.loadavatar(link: vistor.linkAvatar)
+            let avatar_user1: URL = URL.init(string: currenUser.linkAvatar)!
+            Cell.avatar_1_User.kf.setImage(with: avatar_user1)
             Cell.lb_1.text = array_text_chat[indexPath.row]
             return Cell
         }

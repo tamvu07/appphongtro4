@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct User {
+class User {
     let id:String!
     let email:String!
     let linkAvatar:String!

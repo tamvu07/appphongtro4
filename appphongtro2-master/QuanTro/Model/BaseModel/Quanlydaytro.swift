@@ -12,7 +12,7 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct Quanlydaytro : Codable {
+class Quanlydaytro : Codable {
     var iDdaytro : String?
 //    var tenDaytro: String?
 	var quanlyphong : [Quanlyphong]?

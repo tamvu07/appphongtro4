@@ -12,7 +12,7 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct Chitietphong : Codable {
+class Chitietphong : Codable {
 	var diachi : String?
 	var dientich : String?
 	var gia : Int?
