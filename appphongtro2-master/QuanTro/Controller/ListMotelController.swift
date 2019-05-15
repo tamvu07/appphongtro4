@@ -7,6 +7,7 @@ import Firebase
 class ListMotelController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var btnInforBoss: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,11 @@ class ListMotelController: UIViewController, UITableViewDelegate, UITableViewDat
         self.title = "Danh sách khu trọ"
         setupRightButton()
         setupLeftButton()
+        
+        btnInforBoss.layer.masksToBounds = true
+        btnInforBoss.layer.cornerRadius = 10
+        btnInforBoss.layer.borderColor = UIColor.red.cgColor
+        btnInforBoss.layer.borderWidth = 1.0
         
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -93,7 +99,7 @@ class ListMotelController: UIViewController, UITableViewDelegate, UITableViewDat
         let imgHeight = infoImage?.size.height
         let button:UIButton = UIButton(frame: CGRect(x: 0,y: 0,width: imgWidth!, height: imgHeight!))
         button.setBackgroundImage(infoImage, for: .normal)
-        button.addTarget(self, action: #selector(creatNewMotel), for: UIControl.Event.touchUpInside)
+        button.addTarget(self, action: #selector(createNewMotel), for: UIControl.Event.touchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
     }
     func setupLeftButton(){
@@ -125,7 +131,7 @@ class ListMotelController: UIViewController, UITableViewDelegate, UITableViewDat
         present(alert, animated: true, completion: nil)
     }
     
-    @objc func creatNewMotel(){
+    @objc func createNewMotel(){
         
         let alert = UIAlertController(title: "Thông báo", message: "Bạn chắc chắn muốn tạo dãy trọ ?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
@@ -160,6 +166,15 @@ class ListMotelController: UIViewController, UITableViewDelegate, UITableViewDat
             backItem.title = "Trở về"
             navigationItem.backBarButtonItem = backItem
         }
+    }
+    
+    @IBAction func didTapChatButtonUser2(_ sender: Any) {
+        let vc = (storyboard?.instantiateViewController(withIdentifier: "navToChat"))!
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func didTapInforBoss(_ sender: Any) {
+        
     }
 }
 

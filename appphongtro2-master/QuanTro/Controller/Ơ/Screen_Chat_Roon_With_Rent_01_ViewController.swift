@@ -43,10 +43,14 @@ class Screen_Chat_Roon_With_Rent_01_ViewController: UIViewController {
     }
     
     func goto_Screen_Chat_Room_With_Rent_01_01(){
-        let scr = storyboard?.instantiateViewController(withIdentifier: "Screen_Chat_Room_With_Rent_01_01")
-        navigationController?.pushViewController(scr!, animated: true)
+//        let scr = storyboard?.instantiateViewController(withIdentifier: "Screen_Chat_Room_With_Rent_01_01")
+//        navigationController?.pushViewController(scr!, animated: true)
+        self.performSegue(withIdentifier: "FromUser2ListToChat", sender: Any?.self)
     }
     
+    @IBAction func didTapCloseButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
 
 extension Screen_Chat_Roon_With_Rent_01_ViewController: UITableViewDataSource,UITableViewDelegate

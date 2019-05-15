@@ -16,5 +16,6 @@ pod 'Firebase/Storage'
 pod 'CodableFirebase'
 pod 'TextFieldEffects'
 pod 'DLRadioButton','~> 1.4'
+pod 'Kingfisher'
 
 end

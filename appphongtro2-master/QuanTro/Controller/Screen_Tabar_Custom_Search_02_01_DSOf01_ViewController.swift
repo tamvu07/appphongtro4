@@ -21,7 +21,6 @@ class Screen_Tabar_Custom_Search_02_01_DSOf01_ViewController: UIViewController {
         
         tableView.dataSource = self
         tableView.delegate   = self
-        self.load_table()
         
         let tablename = ref.child("User").child("User2")
         // Listen for new comments in the Firebase database
@@ -80,7 +79,9 @@ extension Screen_Tabar_Custom_Search_02_01_DSOf01_ViewController: UITableViewDat
         let lb_diachi = cell.viewWithTag(101) as! UILabel
         let lb_gia    = cell.viewWithTag(102)  as! UILabel
         
-        image.loadavatar(link: listUser2[indexPath.row].linkAvatar)
+//        image.loadavatar(link: listUser2[indexPath.row].linkAvatar)
+        let avatarLoad: URL = URL.init(string: listUser2[indexPath.row].linkAvatar)!
+        image.kf.setImage(with: avatarLoad)
         lb_diachi.text = listUser2[indexPath.row].email
         lb_gia.text = String(listUser2[indexPath.row].quyen)
         
@@ -96,19 +97,5 @@ extension Screen_Tabar_Custom_Search_02_01_DSOf01_ViewController: UITableViewDat
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
-    
-    func load_table() {
-        
-//        var tablename = ref.child("User").child("User2")
-//        tablename.observe(.childAdded, with: { (snapshot) in
-//            // kiem tra xem postDict co du lieu hay ko
-//            let postDict = snapshot.value as? [String : AnyObject]
-//            if(postDict != nil)
-//            {
-////             self.listFriend.append(user)
-//            }
-//        })
-    }
-    
     
 }
